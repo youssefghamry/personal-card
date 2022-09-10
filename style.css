@@ -1,0 +1,244 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: sans-serif, "Gill Sans", "Gill Sans MT", "Calibri",
+    "Trebuchet MS", sans-serif;
+}
+
+body {
+  text-transform: capitalize;
+  background: linear-gradient(#111, #222);
+  height: 100vh;
+  width: 100%;
+  /* لتوسيط العنصؤ()*/
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* لاضافة شي علي العنصر يتم استخدام  
+body::after 
+*/
+
+body::after {
+  /*  */
+  content: "";
+  width: 100%;
+  height: 100%;
+  background-color: red;
+  /*  */
+  position: absolute;
+  /* لرسم دائرة فوق العنصر bode
+    40% =هو حجم الدائرة
+     at = اختيرار اتجاه الازاحة
+     right= الازاحة
+     70%= حجم الازاحة*/
+  clip-path: circle(40% at right 70%);
+  z-index: -1;
+}
+
+.container {
+  width: 80%;
+  height: 80%;
+  background-color: rgba(255, 255, 255, 0.1);
+  /* لعمل انحناء او ظل للعنصر */
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+/* logo */
+
+nav {
+  /*  */
+  display: flex;
+  /* افصل بين العناصر اللوجو وعنصر القائمة */
+  justify-content: space-between;
+  /* توسيط الوجو */
+  align-items: center;
+  width: 80%;
+  /* توسيط الوجو */
+  margin: auto;
+  padding: 20px 0;
+}
+
+nav .logo {
+  color: #fff;
+  /* ازالة خط الينك */
+  text-decoration: none;
+  font-size: 32px;
+  letter-spacing: 2px;
+  font-weight: 700;
+}
+
+/* end logo */
+
+/* lest */
+
+nav ul li {
+  /* لجعل القائمة بالعرض وليسة بالطول */
+  display: inline-block;
+  margin: 0 6px;
+}
+
+nav ul li a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 18px;
+  font-weight: 500;
+}
+
+/* عند مرور الموس يحدث    */
+
+nav ul li a:hover {
+  color: red;
+  font-size: 30px;
+  font-weight: 800;
+}
+
+.content {
+  /* التحكم في الصورة */
+  display: flex;
+  /* مسافة في الوسط  */
+  justify-content: space-between;
+  /* في الوسط */
+  align-items: center;
+  height: 100%;
+  width: 80%;
+  margin: auto;
+}
+
+/* لازالة الاسكرول */
+
+.text::-webkit-scrollbar {
+  width: 0;
+}
+
+.text {
+  color: #fff;
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+}
+
+.text h2 {
+  font-size: 30px;
+  letter-spacing: 2px;
+  color: red;
+}
+a {
+  text-decoration: none;
+}
+.content .text p {
+  color: #fff;
+  line-height: 22px;
+  margin: 10px;
+}
+
+.content .image {
+  width: 40%;
+}
+
+.content .image img {
+  width: 300px;
+  border-radius: 200px;
+  margin-bottom: 155px;
+  border-style: solid;
+  border-color: rgba(255, 255, 255, 0.1);
+  border-width: 50px;
+}
+
+/* تجاوب شاشات الموبايل */
+
+@media (min-width: 950px) and (max-width: 1150px) {
+  body {
+    background-color: red;
+  }
+  .content .image img {
+    width: 150px;
+    height: 150px;
+  }
+}
+
+@media (max-width: 950px) {
+  .content,
+  nav {
+    /*  */
+    flex-direction: column;
+    justify-content: center;
+  }
+  .content .image,
+  .content .text {
+    width: 80%;
+  }
+  body::after {
+    clip-path: circle(50% at bottom);
+  }
+}
+.social-icons a {
+  color: #fff;
+  font-size: 1.7em;
+  padding-right: 30px;
+  text-decoration: none;
+  transition: 1s;
+}
+
+.social-icons a:hover {
+  font-size: 2.5em;
+}
+
+.social-icons .icofont-linkedin:hover {
+  color: rgb(36, 96, 235);
+}
+
+.social-icons .icofont-facebook:hover {
+  color: blue;
+}
+
+.social-icons .icofont-twitter:hover {
+  color: #16cedf;
+}
+
+.social-icons .icofont-youtube:hover {
+  color: rgb(241, 34, 34);
+}
+
+.title {
+  display: flex;
+  justify-content: center;
+  color: var(--min-co6);
+  font-size: 2.2em;
+  font-weight: 800;
+  margin-bottom: 30px;
+}
+
+.card {
+  /* ظل */
+  box-shadow: 0 5px 25px rgba(1, 1, 1, 55%);
+
+  transition: 1s;
+}
+
+.card:hover {
+  transform: scale(1.1);
+}
+
+.icon {
+  color: #fff;
+  font-size: 4em;
+  text-align: center;
+}
+
+.info {
+  text-align: center;
+}
+
+.info h3 {
+  color: #fff;
+  font-size: 1.2em;
+  font-weight: 700;
+  /* margin: 10px; */
+}
+.icon:hover,
+.info:hover {
+  color: red;
+}
